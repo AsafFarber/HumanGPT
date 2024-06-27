@@ -1,0 +1,85 @@
+{
+    "name": "MenuControls",
+    "maps": [
+        {
+            "name": "PC Controls",
+            "id": "d918274c-3cd0-4645-a267-d2d3efbfb882",
+            "actions": [
+                {
+                    "name": "Start Game",
+                    "type": "Button",
+                    "id": "11bace53-d7a9-4666-8461-904f108b3aa3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Reset Scene",
+                    "type": "Button",
+                    "id": "843b3e62-7be3-4a69-8e9d-35356dc909d9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Quit Game",
+                    "type": "Button",
+                    "id": "06923c76-c679-4124-8e30-4145f7f6385e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fea3ebc5-5072-4462-80a9-54511d777882",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Start Game",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c644782d-822b-4400-a378-e5feae482703",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Start Game",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0079bd0d-451f-4f00-abe4-6eac986c4935",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset Scene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0c4969c3-b803-4242-8683-9df5cc6f6bcd",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit Game",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
