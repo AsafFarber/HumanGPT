@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 using Zenject;
 /// <summary>
 /// Manages interactions and item handling for the player.
@@ -11,6 +12,8 @@ public class Interactor : MonoBehaviour
     [SerializeField] private Transform itemInHandContainer;
     [SerializeField] private InteractablesDetector detector;
     [SerializeField] private PlayerAnimation playerAnimation;
+    [SerializeField] private UnityEvent OnItemTake;
+    [SerializeField] private UnityEvent OnItemDrop;
     private IInteractable currentInteractable = null;
 
     [Inject]
@@ -61,6 +64,7 @@ public class Interactor : MonoBehaviour
         item.transform.localPosition = Vector3.zero;
         item.transform.localEulerAngles = Vector3.zero;
         playerAnimation.CarryAnimation(true);
+        OnItemTake?.Invoke();
     }
     public void DropItem()
     {
@@ -70,6 +74,7 @@ public class Interactor : MonoBehaviour
         ResetItemAfterDrop(item);
         playerAnimation.CarryAnimation(false);
         SetInteractableToNull();
+        OnItemDrop?.Invoke();
     }
     private bool IsCarryingObject()
     {

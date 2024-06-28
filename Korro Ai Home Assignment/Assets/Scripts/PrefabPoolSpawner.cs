@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
-
+using UnityEngine.Events;
 public class PrefabPoolSpawner : MonoBehaviour
 {
     [Inject]
     private IterationManager iterationManager;
 
     [SerializeField] private PrefabPool pool;
-    [SerializeField] private bool spawnAtNewIteration = false;
-    [SerializeField] private bool spawnAtStart = false;
+    [SerializeField] private bool spawnOnNewIteration = false;
+    [SerializeField] private bool spawnOnStart = false;
+    [SerializeField] private UnityEvent OnSpawn;
 
     void Start()
     {
-        if (spawnAtNewIteration)
+        if (spawnOnNewIteration)
             iterationManager.OnIterationInitialize += Spawn;
-        if (spawnAtStart)
+        if (spawnOnStart)
             Spawn();
     }
     void OnDestroy()
@@ -39,5 +40,6 @@ public class PrefabPoolSpawner : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
         }
+        OnSpawn?.Invoke();
     }
 }

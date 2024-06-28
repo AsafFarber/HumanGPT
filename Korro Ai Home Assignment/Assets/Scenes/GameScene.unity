@@ -246,18 +246,18 @@ Transform:
   - {fileID: 318984810}
   - {fileID: 1778472350}
   - {fileID: 1505753221}
-  - {fileID: 101144667}
-  - {fileID: 993454898}
   - {fileID: 1030107137}
+  - {fileID: 993454898}
+  - {fileID: 101144667}
   - {fileID: 1259453310}
-  - {fileID: 539336770}
   - {fileID: 983871652}
+  - {fileID: 539336770}
   - {fileID: 554206848}
   - {fileID: 1933556330}
   - {fileID: 894655334}
-  - {fileID: 909821780}
   - {fileID: 581255328}
   - {fileID: 1864579400}
+  - {fileID: 909821780}
   - {fileID: 1067681748}
   - {fileID: 481129905}
   - {fileID: 6557951554161022671}
@@ -410,8 +410,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 91184159}
-  spawnAtNewIteration: 1
-  spawnAtStart: 1
+  spawnOnNewIteration: 1
+  spawnOnStart: 1
+  OnSpawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &91184159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,7 +585,7 @@ GameObject:
   - component: {fileID: 101144669}
   - component: {fileID: 101144668}
   m_Layer: 6
-  m_Name: Cube (11)
+  m_Name: Wall (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1361,6 +1364,7 @@ GameObject:
   - component: {fileID: 411986184}
   - component: {fileID: 411986185}
   - component: {fileID: 411986186}
+  - component: {fileID: 411986187}
   m_Layer: 6
   m_Name: Interactable Cube Spawner
   m_TagString: Untagged
@@ -1411,8 +1415,119 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 411986185}
-  spawnAtNewIteration: 0
-  spawnAtStart: 0
+  spawnOnNewIteration: 0
+  spawnOnStart: 0
+  OnSpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 411986187}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: e9182072952751146afb8636782007e3, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!82 &411986187
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411986183}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &436621957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1685,7 +1800,7 @@ GameObject:
   - component: {fileID: 539336768}
   - component: {fileID: 539336767}
   m_Layer: 6
-  m_Name: Cube (2)
+  m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1790,7 +1905,7 @@ GameObject:
   - component: {fileID: 554206846}
   - component: {fileID: 554206845}
   m_Layer: 6
-  m_Name: Cube (3)
+  m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1895,7 +2010,7 @@ GameObject:
   - component: {fileID: 581255330}
   - component: {fileID: 581255329}
   m_Layer: 6
-  m_Name: Cube (8)
+  m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2079,6 +2194,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2673480281405715715, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
   m_PrefabInstance: {fileID: 8710936730129457105}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &799537748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 799537751}
+  - component: {fileID: 799537750}
+  - component: {fileID: 799537749}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &799537749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799537748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f957f0d00df0bf4478a3db4939c1f261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pool: {fileID: 0}
+  spawnOnNewIteration: 0
+  spawnOnStart: 0
+  OnSpawn:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &799537750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799537748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67bf97facf47ef4488ac0274bc9f6ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5840896399204495126, guid: 6600c81e6adda5b44b690a6c7e7e5cf9, type: 3}
+  defaultAmount: 0
+  maximumAmount: 60
+--- !u!4 &799537751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799537748}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.2780285, y: 7.7280617, z: 6.45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &807804368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2253,7 +2434,7 @@ GameObject:
   - component: {fileID: 894655336}
   - component: {fileID: 894655335}
   m_Layer: 6
-  m_Name: Cube (5)
+  m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2358,7 +2539,7 @@ GameObject:
   - component: {fileID: 909821782}
   - component: {fileID: 909821781}
   m_Layer: 6
-  m_Name: Cube (7)
+  m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2535,7 +2716,7 @@ GameObject:
   - component: {fileID: 983871654}
   - component: {fileID: 983871653}
   m_Layer: 6
-  m_Name: Cube (10)
+  m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2640,7 +2821,7 @@ GameObject:
   - component: {fileID: 993454900}
   - component: {fileID: 993454899}
   m_Layer: 6
-  m_Name: Cube (9)
+  m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2745,7 +2926,7 @@ GameObject:
   - component: {fileID: 1030107135}
   - component: {fileID: 1030107134}
   m_Layer: 6
-  m_Name: Cube (6)
+  m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3888,8 +4069,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 1364971324}
-  spawnAtNewIteration: 1
-  spawnAtStart: 1
+  spawnOnNewIteration: 1
+  spawnOnStart: 1
+  OnSpawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1364971324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4250,7 +4434,7 @@ GameObject:
   - component: {fileID: 1505753219}
   - component: {fileID: 1505753218}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4667,6 +4851,7 @@ GameObject:
   - component: {fileID: 1612044037}
   - component: {fileID: 1612044040}
   - component: {fileID: 1612044042}
+  - component: {fileID: 1612044043}
   m_Layer: 5
   m_Name: CollectionManager
   m_TagString: Untagged
@@ -4717,6 +4902,103 @@ MonoBehaviour:
   collectableItems:
   - {fileID: 11400000, guid: 52fe64e874b831545ba3c787cef02af4, type: 2}
   - {fileID: 11400000, guid: 31317b6605dc27646872e6876a4f2637, type: 2}
+  audioSource: {fileID: 1612044043}
+--- !u!82 &1612044043
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612044036}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1661295360
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,7 +5637,7 @@ GameObject:
   - component: {fileID: 1864579405}
   - component: {fileID: 1864579404}
   m_Layer: 6
-  m_Name: Cube (09)
+  m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5529,7 +5811,7 @@ GameObject:
   - component: {fileID: 1933556328}
   - component: {fileID: 1933556327}
   m_Layer: 6
-  m_Name: Cube (4)
+  m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6204,3 +6486,4 @@ SceneRoots:
   - {fileID: 1214987717}
   - {fileID: 1670595345}
   - {fileID: 1797703561}
+  - {fileID: 799537751}

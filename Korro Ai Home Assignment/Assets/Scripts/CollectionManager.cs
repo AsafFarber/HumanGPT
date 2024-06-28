@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using System;
-
+using UnityEngine.Events;
 public class CollectionManager : MonoBehaviour
 {
     [SerializeField] private CollectableDisplay collectionDisplay;
     [SerializeField] private CollectableItem[] collectableItems;
+    [SerializeField] private AudioSource audioSource;
+
     [Inject]
     private IterationManager iterationManager;
 
@@ -30,7 +32,10 @@ public class CollectionManager : MonoBehaviour
         foreach(CollectableItem collectableItem in collectableItems)
         {
             if(collectableItem.type == type)
+            {
                 displays[type].AddCollectableGraphic(collectableItem.image);
+                audioSource.PlayOneShot(collectableItem.soundEffect);
+            }
         }
     }
     public void ResetCollection()

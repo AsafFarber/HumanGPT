@@ -7,4 +7,5 @@ public class CollectableItem : ScriptableObject
     public CollectableType type;
     public Sprite image;
     public string displayName;
+    public AudioClip soundEffect;
 }

@@ -15,3 +15,4 @@ MonoBehaviour:
   type: 1
   image: {fileID: 21300000, guid: cf4e5592af6d6ad4d91deecb4d823c48, type: 3}
   displayName: Key
+  soundEffect: {fileID: 8300000, guid: 8794b8df556530e4bbbde5addd6a5864, type: 3}

@@ -11,7 +11,7 @@ public class PrefabPool : MonoBehaviour
 
     [SerializeField] private GameObject prefab;
     [SerializeField] private int defaultAmount = 0;
-    [SerializeField] private int maximumAmount = 5;
+    [SerializeField] private int maximumAmount = 60;
 
     private IObjectPool<GameObject> pool;
     private int objectCounter = 0;
