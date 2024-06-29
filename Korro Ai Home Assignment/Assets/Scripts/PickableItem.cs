@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PickableItem : Item
 {
-    public override void Interact(Interactor PlayerInteractor)
+    public override void Interact(Interactor playerInteractor)
     {
-        GiveItemToPlayer(PlayerInteractor);
+        GiveItemToPlayer(playerInteractor);
     }
-    public void GiveItemToPlayer(Interactor PlayerInteractor)
+
+    public void GiveItemToPlayer(Interactor playerInteractor)
     {
-        PlayerInteractor.PickupItem(this);
+        playerInteractor.PickupItem(this);
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -11,6 +9,7 @@ public class PooledObject : MonoBehaviour
     {
         pool = poolToAssign;
     }
+
     public void ReleaseToPool()
     {
         pool.Release(gameObject);

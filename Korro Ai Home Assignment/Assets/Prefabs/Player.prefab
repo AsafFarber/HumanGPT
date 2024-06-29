@@ -295,7 +295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovment: {fileID: 660219225871293045}
-  animator: {fileID: 2106340237565239794}
   playerAnimation: {fileID: 7059264558280984584}
 --- !u!114 &2314664898883173431
 MonoBehaviour:
@@ -342,7 +341,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 551060290087353137}
         m_TargetAssemblyTypeName: Interactor, Assembly-CSharp
-        m_MethodName: IteractButton
+        m_MethodName: InteractButton
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

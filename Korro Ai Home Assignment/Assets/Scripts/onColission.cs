@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-public class onColission : MonoBehaviour
+
+public class OnCollision : MonoBehaviour
 {
-    [SerializeField] private LayerMask layerMask;
-    [SerializeField] private UnityEvent onCollisionEnter;
+    [SerializeField]
+    private LayerMask layerMask;
+
+    [SerializeField]
+    private UnityEvent onCollisionEnter;
 
     private void OnCollisionEnter(Collision collision)
     {

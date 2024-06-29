@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
+
 public class Respawner : MonoBehaviour
 {
-    [SerializeField] private LayerMask layerMask;
+    [SerializeField]
+    private LayerMask layerMask;
 
     [Inject]
     private IterationManager iterationManager;

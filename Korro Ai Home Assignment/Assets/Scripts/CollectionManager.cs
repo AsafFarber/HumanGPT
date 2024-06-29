@@ -1,56 +1,67 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
-using System;
-using UnityEngine.Events;
+
 public class CollectionManager : MonoBehaviour
 {
-    [SerializeField] private CollectableDisplay collectionDisplay;
-    [SerializeField] private CollectableItem[] collectableItems;
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField]
+    private CollectableDisplay collectionDisplay;
+
+    [SerializeField]
+    private CollectableItem[] collectableItemsData;
+
+    [SerializeField]
+    private AudioSource audioSource;
 
     [Inject]
     private IterationManager iterationManager;
 
-    private Dictionary<CollectableType, int> collectables = new Dictionary<CollectableType, int>();
-    private Dictionary<CollectableType, CollectableDisplay> displays = new Dictionary<CollectableType, CollectableDisplay>();
+    private readonly Dictionary<CollectableType, int> collectables = new Dictionary<CollectableType, int>();
+    private readonly Dictionary<CollectableType, CollectableDisplay> displays = new Dictionary<CollectableType, CollectableDisplay>();
 
-    void Start()
+    private void Start()
     {
         CreateUI();
         ResetCollection();
         iterationManager.OnIterationInitialize += ResetCollection;
     }
-    void OnDestroy()
+
+    private void OnDestroy()
     {
         iterationManager.OnIterationInitialize -= ResetCollection;
     }
-    public void AddCollectable(CollectableType type)
+
+    public void AddCollectable(Collectable collectable)
     {
+        CollectableType type = collectable.GetCollectableType();
         collectables[type]++;
-        foreach(CollectableItem collectableItem in collectableItems)
+        foreach (CollectableItem itemData in collectableItemsData)
         {
-            if(collectableItem.type == type)
+            if (itemData.type == type)
             {
-                displays[type].AddCollectableGraphic(collectableItem.image);
-                audioSource.PlayOneShot(collectableItem.soundEffect);
+                displays[type].AddCollectableGraphic(itemData.image);
+                Instantiate(itemData.visualEffect.gameObject, collectable.transform.position, Quaternion.identity);
+                audioSource.PlayOneShot(itemData.soundEffect);
             }
         }
     }
+
     public void ResetCollection()
     {
-        collectables = new Dictionary<CollectableType, int>();
+        collectables.Clear();
         foreach (CollectableType type in Enum.GetValues(typeof(CollectableType)))
         {
             collectables[type] = 0;
             displays[type].ResetCollectableDisplay();
         }
     }
+
     public int GetCollectableAmount(CollectableType type)
     {
         return collectables[type];
     }
+
     private void CreateUI()
     {
         int counter = 0;
@@ -63,5 +74,4 @@ public class CollectionManager : MonoBehaviour
             counter++;
         }
     }
-
 }

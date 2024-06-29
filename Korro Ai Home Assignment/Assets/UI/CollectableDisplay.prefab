@@ -82,4 +82,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ca887adc1ecf74481432c43592e0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectablTemplate: {fileID: 3865381044173669191, guid: f13566df53ff8624f868931e806f1185, type: 3}
+  collectableTemplate: {fileID: 3865381044173669191, guid: f13566df53ff8624f868931e806f1185, type: 3}

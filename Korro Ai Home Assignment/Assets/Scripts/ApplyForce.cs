@@ -1,13 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ApplyForce : MonoBehaviour
 {
-    [SerializeField] private Vector3 magnitude;
+    [SerializeField]
+    private Vector3 magnitude;
 
     public void ApplyToObject(GameObject obj)
     {
+        if (obj == null)
+        {
+            return;
+        }
+
         Rigidbody objectRigidbody = obj.GetComponent<Rigidbody>();
         if (objectRigidbody == null)
         {
@@ -19,7 +23,9 @@ public class ApplyForce : MonoBehaviour
         objectRigidbody.AddForce(Vector3.Scale(direction, magnitude), ForceMode.Impulse);
 
         PlayerAnimation playerAnimation = obj.GetComponent<PlayerAnimation>();
-        if (objectRigidbody != null)
+        if (playerAnimation != null)
+        {
             playerAnimation.HitAnimation();
+        }
     }
 }
