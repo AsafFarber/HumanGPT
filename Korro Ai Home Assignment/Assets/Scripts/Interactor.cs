@@ -61,11 +61,27 @@ public class Interactor : MonoBehaviour
 
     private void SetInteractableToNull()
     {
+        if (currentInteractable == null)
+        {
+            return;
+        }
+        if (currentInteractable != null)
+        {
+            currentInteractable.RemoveOutline();
+        }
         currentInteractable = null;
     }
 
     public void SetInteractable(IInteractable newInteractable)
     {
+        if(currentInteractable != null)
+        {
+            currentInteractable.RemoveOutline();
+        }
+        if (newInteractable != null)
+        {
+            newInteractable.AddOutline();
+        }
         currentInteractable = newInteractable;
     }
 

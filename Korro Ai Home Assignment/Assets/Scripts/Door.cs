@@ -5,8 +5,9 @@ using UnityEngine.Events;
 public class Door : MonoBehaviour, IInteractable
 {
     [SerializeField]
-    private UnityEvent OnDoorOpen;
-
+    private UnityEvent OnInteractWithKey;
+    [SerializeField]
+    private UnityEvent OnInteractWithotKey;
     [Inject]
     private CollectionManager collectionManager;
 
@@ -14,7 +15,11 @@ public class Door : MonoBehaviour, IInteractable
     {
         if (collectionManager.GetCollectableAmount(CollectableType.Key) > 0)
         {
-            OnDoorOpen.Invoke();
+            OnInteractWithKey?.Invoke();
+        }
+        else
+        {
+            OnInteractWithotKey?.Invoke();
         }
     }
 }

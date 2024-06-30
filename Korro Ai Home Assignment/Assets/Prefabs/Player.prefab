@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4871416263398029177}
   - component: {fileID: 4518962924658978255}
   m_Layer: 7
-  m_Name: InteractionSyatem
+  m_Name: InteractionSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
