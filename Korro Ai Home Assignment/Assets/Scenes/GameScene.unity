@@ -3848,7 +3848,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Control the robot with ''W'' & ''S''.
 
-    Jump using the spacebar.
+    Use the spacebar to jump.
 
     The
     robot will always
@@ -5619,8 +5619,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.18, y: 4}
-  m_SizeDelta: {x: 28.67, y: 5}
+  m_AnchoredPosition: {x: 6.27, y: 4}
+  m_SizeDelta: {x: 29.64, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1850470981
 MonoBehaviour:
@@ -5642,9 +5642,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Interact with blue objects
+  m_text: 'Press the ''E'' button to interact
 
-    using the ''E'' buttotn.'
+    with outlined objects.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a1430810d71182409a80a19306ff6fa, type: 2}
   m_sharedMaterial: {fileID: 4320665810864801960, guid: 7a1430810d71182409a80a19306ff6fa, type: 2}
