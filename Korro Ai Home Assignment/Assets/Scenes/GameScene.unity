@@ -484,12 +484,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080039635341823776, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
       propertyPath: m_Name
-      value: Coin (10)
+      value: Coin (5)
       objectReference: {fileID: 0}
     - target: {fileID: 3080039635341823776, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3633217260379718213, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
+      propertyPath: collectableItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 52fe64e874b831545ba3c787cef02af4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2437,12 +2441,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080039635341823776, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
       propertyPath: m_Name
-      value: Coin (11)
+      value: Coin (6)
       objectReference: {fileID: 0}
     - target: {fileID: 3080039635341823776, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3633217260379718213, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
+      propertyPath: collectableItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 52fe64e874b831545ba3c787cef02af4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3300,11 +3308,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080039635341823776, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
       propertyPath: m_Name
-      value: Coin (6)
+      value: Coin (2)
       objectReference: {fileID: 0}
     - target: {fileID: 3080039635341823776, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3633217260379718213, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
+      propertyPath: collectableItem
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5025,9 +5037,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectionDisplay: {fileID: -676447572022618616, guid: 4eb7568c4ca691e44897693f397dbf6c, type: 3}
-  collectableItemsData:
-  - {fileID: 11400000, guid: 52fe64e874b831545ba3c787cef02af4, type: 2}
-  - {fileID: 11400000, guid: 31317b6605dc27646872e6876a4f2637, type: 2}
   audioSource: {fileID: 1612044043}
 --- !u!82 &1612044043
 AudioSource:
@@ -6093,12 +6102,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080039635341823776, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
       propertyPath: m_Name
-      value: Coin (8)
+      value: Coin (3)
       objectReference: {fileID: 0}
     - target: {fileID: 3080039635341823776, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3633217260379718213, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
+      propertyPath: collectableItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 52fe64e874b831545ba3c787cef02af4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6163,11 +6176,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080039635341823776, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
       propertyPath: m_Name
-      value: Coin (9)
+      value: Coin (4)
       objectReference: {fileID: 0}
     - target: {fileID: 3080039635341823776, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3633217260379718213, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
+      propertyPath: collectableItem
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6554,12 +6571,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3080039635341823776, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
       propertyPath: m_Name
-      value: Coin (3)
+      value: Coin (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3080039635341823776, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3633217260379718213, guid: 2bb6e72718372e84f862bb62bb458078, type: 3}
+      propertyPath: collectableItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 52fe64e874b831545ba3c787cef02af4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

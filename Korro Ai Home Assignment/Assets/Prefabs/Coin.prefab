@@ -122,8 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5472b5cdec098c141a3bf0a07b22760a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  visualEffect: {fileID: 5109772006442843410, guid: 6600c81e6adda5b44b690a6c7e7e5cf9, type: 3}
+  collectableData: {fileID: 11400000, guid: 52fe64e874b831545ba3c787cef02af4, type: 2}
 --- !u!114 &5957883341244506605
 MonoBehaviour:
   m_ObjectHideFlags: 0

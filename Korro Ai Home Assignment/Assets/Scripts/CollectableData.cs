@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CollectableItem", menuName = "Collectable [Scriptable Object]")]
-public class CollectableItem : ScriptableObject
+public class CollectableData : ScriptableObject
 {
     [Tooltip("Type of the collectable item.")]
     public CollectableType type;
@@ -15,6 +15,6 @@ public class CollectableItem : ScriptableObject
     [Tooltip("Sound effect played when the item is collected.")]
     public AudioClip soundEffect;
 
-    [Tooltip("Sound effect played when the item is collected.")]
+    [Tooltip("Visual effect played when the item is collected.")]
     public ParticleSystem visualEffect;
 }

@@ -9,15 +9,12 @@ public class CollectionManager : MonoBehaviour
     private CollectableDisplay collectionDisplay;
 
     [SerializeField]
-    private CollectableItem[] collectableItemsData;
-
-    [SerializeField]
     private AudioSource audioSource;
 
     [Inject]
     private IterationManager iterationManager;
 
-    private readonly Dictionary<CollectableType, int> collectables = new Dictionary<CollectableType, int>();
+    private readonly Dictionary<CollectableType, int> collectablesAmount = new Dictionary<CollectableType, int>();
     private readonly Dictionary<CollectableType, CollectableDisplay> displays = new Dictionary<CollectableType, CollectableDisplay>();
 
     private void Start()
@@ -34,32 +31,30 @@ public class CollectionManager : MonoBehaviour
 
     public void AddCollectable(Collectable collectable)
     {
-        CollectableType type = collectable.GetCollectableType();
-        collectables[type]++;
-        foreach (CollectableItem itemData in collectableItemsData)
-        {
-            if (itemData.type == type)
-            {
-                displays[type].AddCollectableGraphic(itemData.image);
-                Instantiate(itemData.visualEffect.gameObject, collectable.transform.position, Quaternion.identity);
-                audioSource.PlayOneShot(itemData.soundEffect);
-            }
-        }
+        CollectableData collectableData = collectable.GetcollectableData();
+        // Increase collectable's type amount.
+        // Display collectable's image in the UI.
+        // Spawn collectable's visual effect.
+        // Play collectable's audio.
+        collectablesAmount[collectableData.type]++;
+        displays[collectableData.type].AddCollectableGraphic(collectableData.image);
+        Instantiate(collectableData.visualEffect.gameObject, collectable.transform.position, Quaternion.identity);
+        audioSource.PlayOneShot(collectableData.soundEffect);
     }
 
     public void ResetCollection()
     {
-        collectables.Clear();
+        collectablesAmount.Clear();
         foreach (CollectableType type in Enum.GetValues(typeof(CollectableType)))
         {
-            collectables[type] = 0;
+            collectablesAmount[type] = 0;
             displays[type].ResetCollectableDisplay();
         }
     }
 
     public int GetCollectableAmount(CollectableType type)
     {
-        return collectables[type];
+        return collectablesAmount[type];
     }
 
     private void CreateUI()

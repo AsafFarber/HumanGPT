@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5109772006442843410}
   - component: {fileID: 3092508493716367039}
   m_Layer: 0
-  m_Name: SpawnEffect
+  m_Name: GoldSpawnEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

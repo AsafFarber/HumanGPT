@@ -16,4 +16,4 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: cf4e5592af6d6ad4d91deecb4d823c48, type: 3}
   displayName: Key
   soundEffect: {fileID: 8300000, guid: 8794b8df556530e4bbbde5addd6a5864, type: 3}
-  visualEffect: {fileID: 5109772006442843410, guid: 6600c81e6adda5b44b690a6c7e7e5cf9, type: 3}
+  visualEffect: {fileID: 5109772006442843410, guid: 9f72597e0e264a442aebf1b2c3a5722b, type: 3}
